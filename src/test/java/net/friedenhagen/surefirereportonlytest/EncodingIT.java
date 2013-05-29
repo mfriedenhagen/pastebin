@@ -1,4 +1,4 @@
-package net.friedenhagen.surefireencodingtest;
+package net.friedenhagen.surefirereportonlytest;
 
 import static org.junit.Assume.assumeNoException;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import org.junit.Test;
  *
  * @author Mirko Friedenhagen
  */
-public class EncodingTest {
+public class EncodingIT {
     @Test
     public void throwAssumption() {
         final IllegalStateException exception = new IllegalStateException("äöüß");
