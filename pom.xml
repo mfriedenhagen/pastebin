@@ -59,7 +59,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.6.4.201312101107</version>
+                    <version>0.6.5-SNAPSHOT</version>
                     <executions>
                         <execution>
                             <goals>
@@ -76,13 +76,12 @@
                     <executions>
                         <execution>
                             <id>default-add-source</id>
-                            <phase>prepare-package</phase>
                             <goals>
                                 <goal>add-source</goal>
                             </goals>
                             <configuration>
                                 <sources>
-                                    <source>${project.build.directory}/app/src/main/java</source>
+                                    <source>${user.dir}/app/src/main/java</source>
                                 </sources>
                             </configuration>
                         </execution>
