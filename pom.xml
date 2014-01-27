@@ -76,12 +76,14 @@
                     <executions>
                         <execution>
                             <id>default-add-source</id>
+                            <phase>prepare-package</phase>
                             <goals>
                                 <goal>add-source</goal>
                             </goals>
                             <configuration>
                                 <sources>
                                     <source>${user.dir}/app/src/main/java</source>
+                                    <source>target/generated-sources/dependency</source>
                                 </sources>
                             </configuration>
                         </execution>
@@ -95,5 +97,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
