@@ -50,6 +50,48 @@
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.8</version>
+                    <executions>
+                        <execution>
+                            <id>unpack-classes</id>
+                            <goals>
+                                <goal>unpack</goal>
+                            </goals>
+                            <configuration>
+                                <artifactItems>
+                                    <artifactItem>
+                                        <groupId>${project.groupId}</groupId>
+                                        <artifactId>jacoco-with-sources-from-dependent-jars-app</artifactId>
+                                    </artifactItem>
+                                    <artifactItem>
+                                        <groupId>junit</groupId>
+                                        <artifactId>junit</artifactId>
+                                    </artifactItem>
+                                </artifactItems>
+                                <outputDirectory>target/classes</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>unpack-sources</id>
+                            <goals>
+                                <goal>unpack</goal>
+                            </goals>
+                            <configuration>
+                                <artifactItems>
+                                    <artifactItem>
+                                        <groupId>junit</groupId>
+                                        <artifactId>junit</artifactId>
+                                        <classifier>sources</classifier>
+                                    </artifactItem>
+                                </artifactItems>
+                                <outputDirectory>target/generated-sources/dependency</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
